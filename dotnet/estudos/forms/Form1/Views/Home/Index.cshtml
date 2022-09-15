@@ -1,0 +1,23 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    string[] menu = new string [] {"Cadastrar", "Visualizar", "Gerenciar"};
+}
+
+<div class="text-center">
+    <div class="accordion mx-auto w-50 text-center" id="accordionExample">
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    Usuários
+                </button>
+            </h2>
+    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+      @foreach(string item in menu){
+      <div class="accordion-body p-2">
+                        @Html.ActionLink(@item, @item, "Cadastro", null, new { @class = "btn btn-outline-primary w-75" })
+      </div>
+      }
+    </div>
+        </div>
+    </div>
+</div>
